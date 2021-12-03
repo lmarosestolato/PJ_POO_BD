@@ -78,11 +78,13 @@ public class InfoContatoDAO extends ConnectionDAO {
             rs = st.executeQuery(sql);
 
             while(rs.next()){
-                Galeria galeria = new Galeria(rs.getString("nome_galeria"), rs.getString("nome_gerente"));
+                Galeria galeria = new Galeria(rs.getString("nome_galeria"),
+                        rs.getString("nome_gerente"), rs.getInt("num_func"));
                 galeria.setIdGaleria(rs.getInt("idGaleria"));
                 System.out.println("ID = " + galeria.getIdGaleria());
                 System.out.println("Nome = " + galeria.getNome_galeria());
                 System.out.println("Gerente = " + galeria.getNome_gerente());
+                System.out.println("Numero de Funcionarios = " + galeria.getNum_func());
                 System.out.println("------------------------------");
                 galerias.add(galeria);
             }

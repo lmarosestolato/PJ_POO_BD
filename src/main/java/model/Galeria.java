@@ -7,7 +7,10 @@ public class Galeria {
     private int num_func;
     private InfoContato contato;
 
-    public Galeria(String nome_galeria, String nome_gerente) {
+    public Galeria(String nome_galeria, String nome_gerente, int num_func) {
+        this.nome_galeria = nome_galeria;
+        this.nome_gerente = nome_gerente;
+        this.num_func = num_func;
     }
 
     public int getIdGaleria() {
