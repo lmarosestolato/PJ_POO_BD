@@ -48,13 +48,13 @@ public class Principal {
                     }
                     else System.out.println("Ocorreu um problema, tente novamente mais tarde.");
                     break;
-                case 2:
+                case 3:
                     System.out.println("Digite o email que deseja buscar: ");
                     email = sc.next();
                     ArrayList<Galeria> galerias = icDAO.researchGaleriaEmail(email);
                     if(galerias.isEmpty()) System.out.println("Nenhum registro encontrado.");
                     break;
-                case 3:
+                case 2:
                     System.out.println("Digite o email da galeria: ");
                     email = sc.next();
                     sc.nextLine();

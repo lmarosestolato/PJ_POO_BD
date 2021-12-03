@@ -105,11 +105,11 @@ public class InfoContatoDAO extends ConnectionDAO {
     // ----------------------------ATUALIZANDO ENDEREÇO NO REGISTRO----------------------------
     public boolean updateEnderecoGaleria(String email, String novoEndereco){
         connectToDB();
-        String sql = "UPDATE info_contato SET nome=? WHERE email=?";
+        String sql = "UPDATE info_contato SET endereco=? WHERE email=?";
         try{
             pst = con.prepareStatement(sql);
-            pst.setString(1, email);
-            pst.setString(2, novoEndereco);
+            pst.setString(1, novoEndereco);
+            pst.setString(2, email);
             pst.execute();
             check = true;
         }catch (SQLException e){
