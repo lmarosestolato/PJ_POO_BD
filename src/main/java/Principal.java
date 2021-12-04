@@ -128,6 +128,16 @@ public class Principal {
                     break;
             }
             System.out.println("-------------------------------------------------------");
+            System.out.println("O que deseja fazer?");
+            System.out.println("1) Deletar uma galeria");
+            System.out.println("2) Atualizar endereco da galeria");
+            System.out.println("3) Buscar galeria pelo email");
+            System.out.println("4) Buscar contato de todas as galerias");
+            System.out.println("5) Inserir uma nova informacao de contato");
+            System.out.println("6) Inserir uma obra");
+            System.out.println("7) Buscar todas as obras disponiveis por artista");
+            System.out.println("0) Finalizar operação");
+            System.out.println("-------------------------------------------------------");
             System.out.print("Digite o numero da operação: ");
             op = sc.nextInt();
             sc.nextLine();
