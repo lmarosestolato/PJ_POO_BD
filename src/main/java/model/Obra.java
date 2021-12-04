@@ -11,7 +11,15 @@ public class Obra {
     private String movimento;
     private Artista artista;
 
-    public Obra(String nome_obra, String tipo, String local_origem, int ano_criacao, String material, String tecnica, String movimento) {
+    public Obra(String nome_obra, String tipo, String local_origem, int ano_criacao, String material,
+                String tecnica, String movimento) {
+        this.nomeObra = nome_obra;
+        this.tipo = tipo;
+        this.local_origem = local_origem;
+        this.ano_criacao = ano_criacao;
+        this.material = material;
+        this.tecnica = tecnica;
+        this.movimento = movimento;
     }
 
     public Obra() {
