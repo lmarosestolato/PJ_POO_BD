@@ -13,17 +13,18 @@ public class ObraDAO extends ConnectionDAO {
     // ----------------------------INSERINDO NOVO REGISTRO----------------------------
     public boolean insertObra(Obra obra){
         connectToDB();
-        String sql = "INSERT INTO obra(tipo, local_origem, ano_criacao, material, tecnica, movimento, artist_idArtist) VALUES(?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO obra(nome_obra, tipo, local_origem, ano_criacao, material, tecnica, movimento, artista_idArtista) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         try {
 
             pst = con.prepareStatement(sql);
-            pst.setString(1, obra.getTipo());      // concatena nome na primeira ? do comando
-            pst.setString(2, obra.getLocal_origem());        // concatena nome na segunda ? do comando
-            pst.setInt(3, obra.getAno_criacao());
-            pst.setString(4, obra.getMaterial());
+            pst.setString(1, obra.getNomeObra());
+            pst.setString(2, obra.getTipo());
+            pst.setString(3, obra.getLocal_origem());
+            pst.setInt(4, obra.getAno_criacao());
             pst.setString(5, obra.getMaterial());
-            pst.setString(6, obra.getTecnica());
-            pst.setInt(7, obra.getArtista().getIdArtista());
+            pst.setString(6, obra.getMaterial());
+            pst.setString(7, obra.getTecnica());
+            pst.setInt(8, obra.getArtista().getIdArtista());
 
             pst.execute();                           // executa o comando
             check = true;

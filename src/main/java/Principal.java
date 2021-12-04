@@ -1,3 +1,4 @@
+import DAO.ArtistaDAO;
 import DAO.GaleriaDAO;
 import DAO.InfoContatoDAO;
 import DAO.ObraDAO;
@@ -20,6 +21,7 @@ public class Principal {
         GaleriaDAO gDAO = new GaleriaDAO();
         InfoContatoDAO icDAO = new InfoContatoDAO();
         ObraDAO oDAO = new ObraDAO();
+        ArtistaDAO aDAO = new ArtistaDAO();
 
         System.out.println("O que deseja fazer?");
         System.out.println("1) Deletar uma galeria");
@@ -95,14 +97,12 @@ public class Principal {
                     break;
                 case 6:
                     Obra oAux = new Obra();
-                    System.out.print("Digite o nome da obra: ");
                     sc.nextLine();
+                    System.out.print("Digite o nome da obra: ");
                     oAux.setNomeObra(sc.nextLine());
                     System.out.print("Digite o tipo de obra: ");
-                    sc.nextLine();
                     oAux.setTipo(sc.nextLine());
                     System.out.print("Digite o local de origem da obra: ");
-                    sc.nextLine();
                     oAux.setLocal_origem(sc.nextLine());
                     System.out.print("Digite o ano de criação: ");
                     oAux.setAno_criacao(sc.nextInt());
@@ -110,18 +110,19 @@ public class Principal {
                     sc.nextLine();
                     oAux.setMaterial(sc.nextLine());
                     System.out.print("Digite a técnica utilizada: ");
-                    sc.nextLine();
                     oAux.setTecnica(sc.nextLine());
                     System.out.print("Digite o movimento artístico da obra: ");
-                    sc.nextLine();
                     oAux.setMovimento(sc.nextLine());
                     System.out.print("Digite o nome do artista: ");
-                    sc.nextLine();
                     artAux.setNome_artista(sc.nextLine());
-                    oAux.setArtista(artAux);
+                    System.out.print("Digite a id do artista: ");
+                    artAux.setIdArtista(sc.nextInt());
 
-                    if(oDAO.insertObra(oAux)){
-                        System.out.println("Obra inserida com sucesso");
+                    if(aDAO.insertArtista(artAux)){
+                        oAux.setArtista(artAux);
+                        if(oDAO.insertObra(oAux)){
+                            System.out.println("Obra inserida com sucesso");
+                        }
                     }
                     else System.out.println("Ocorreu um problema, tente novamente mais tarde.");
                     break;
