@@ -47,7 +47,8 @@ public class InfoContatoDAO extends ConnectionDAO {
             rs = st.executeQuery(sql);
 
             while(rs.next()){
-                InfoContato cttTemp = new InfoContato(rs.getString("telefone"), rs.getString("email"), rs.getString("endereco"));
+                InfoContato cttTemp = new InfoContato(rs.getString("telefone"),
+                        rs.getString("email"), rs.getString("endereco"));
                 System.out.println("Email = " + cttTemp.getEmail());
                 System.out.println("Telefone = " + cttTemp.getTelefone());
                 System.out.println("Endereco = " + cttTemp.getEndereco());

@@ -6,6 +6,9 @@ public class InfoContato {
     private String endereco;
 
     public InfoContato(String telefone, String email, String endereco) {
+        this.telefone = telefone;
+        this.email = email;
+        this.endereco = endereco;
     }
 
     public InfoContato() {
