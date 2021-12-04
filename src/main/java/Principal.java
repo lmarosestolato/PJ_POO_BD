@@ -74,8 +74,8 @@ public class Principal {
                     break;
                 case 5:
                     InfoContato ctt = new InfoContato();
-                    System.out.print("Digite um telefone: ");
                     sc.nextLine();
+                    System.out.print("Digite um telefone: ");
                     ctt.setTelefone(sc.nextLine());
                     System.out.print("Digite um email: ");
                     //sc.nextLine();
