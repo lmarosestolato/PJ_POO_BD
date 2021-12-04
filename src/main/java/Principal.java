@@ -71,9 +71,9 @@ public class Principal {
                     if(contatos.isEmpty()) System.out.println("Nenhum registro encontrado.");
                     break;
                 case 5:
-                    sc.nextLine();
                     InfoContato ctt = new InfoContato();
                     System.out.print("Digite um telefone: ");
+                    sc.nextLine();
                     ctt.setTelefone(sc.nextLine());
                     System.out.print("Digite um email: ");
                     //sc.nextLine();
